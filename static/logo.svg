@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TurfTruth Logo">
+  <defs>
+    <linearGradient id="ttBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="ttLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#ttBg)" stroke="#4ade80" stroke-width="2" />
+  <!-- Turf horizon blades -->
+  <path d="M12 48 C22 44, 42 44, 52 48" fill="none" stroke="#86efac" stroke-width="3" stroke-linecap="round" />
+  <path d="M16 48 L14 40 M24 46 L23 37 M40 46 L41 38 M48 48 L50 40" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" />
+  <!-- Central garden leaf -->
+  <path d="M32 12 C44 14, 50 26, 44 37 C39 45, 25 45, 20 37 C14 26, 20 14, 32 12 Z" fill="url(#ttLeaf)" />
+  <!-- Leaf vein & stem -->
+  <path d="M32 16 L32 46 M32 26 L39 21 M32 32 L25 27 M32 36 L38 32" fill="none" stroke="#052e16" stroke-width="2.4" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "garden_01",
+    "image": "garden_01_overgrown_lawn.png",
+    "is_garden": true,
+    "min_tasks": 3,
+    "description": "Overgrown residential back lawn with long grass and untidy borders"
+  },
+  {
+    "id": "garden_02",
+    "image": "garden_02_hedges_and_patio.png",
+    "is_garden": true,
+    "min_tasks": 3,
+    "description": "Front privet hedge and weedy Yorkstone patio slabs"
+  },
+  {
+    "id": "garden_03",
+    "image": "garden_03_backyard_borders.png",
+    "is_garden": true,
+    "min_tasks": 3,
+    "description": "Mixed backyard garden needing lawn care, hedge trim, and green waste clearance"
+  },
+  {
+    "id": "non_garden_01",
+    "image": "not_a_garden_01_indoor.png",
+    "is_garden": false,
+    "min_tasks": 0,
+    "description": "Indoor non-garden photo (should return is_garden=false and zero tasks)"
+  },
+  {
+    "id": "non_garden_02",
+    "image": "not_a_garden_02_blank.png",
+    "is_garden": false,
+    "min_tasks": 0,
+    "description": "Uniform blank non-garden image (should return is_garden=false and zero tasks)"
+  }
+]

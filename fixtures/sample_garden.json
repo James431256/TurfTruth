@@ -1,0 +1,25 @@
+{
+  "is_garden": true,
+  "tasks": [
+    {
+      "name": "Overgrown lawn mow & edge",
+      "hours": 2.0,
+      "evidence": "Lawn grass ~15cm tall with creeping border edges."
+    },
+    {
+      "name": "Privet hedge trim & clear",
+      "hours": 1.5,
+      "evidence": "Boundary hedge ~2.2m tall with uneven top growth."
+    },
+    {
+      "name": "Flowerbed weeding & mulch tidy",
+      "hours": 1.25,
+      "evidence": "Perennial weeds visible along front and side borders."
+    },
+    {
+      "name": "Patio sweep & green waste bag-up",
+      "hours": 0.75,
+      "evidence": "Moss and leaf litter across Yorkstone paving slabs."
+    }
+  ]
+}

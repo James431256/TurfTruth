@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TurfTruth — AI Garden Quote &amp; Weather-Safe Dispatch</title>
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand-group">
+      <img src="/static/logo.svg" alt="TurfTruth logo" class="brand-logo" width="34" height="34" />
+      <h1>TurfTruth</h1>
+      <span class="brand-badge">Gemini Vision Labour Quoter &amp; Weather-Safe Scheduler</span>
+      <span id="demo-badge" data-testid="demo-badge" class="demo-badge">DEMO MODE</span>
+    </div>
+    <p class="subtitle" id="quote-subtitle">
+      Upload a garden photo or click &ldquo;Use sample garden&rdquo; to generate an itemised quote.
+    </p>
+  </header>
+
+  <main>
+    <div class="top-workspace">
+      <!-- Left Column: Client Garden Photo & Gemini Vision Preview -->
+      <section class="panel-card upload-panel" aria-label="Garden photo analysis">
+        <div>
+          <div class="panel-header">
+            <h2>📸 Client Garden Photo</h2>
+            <span class="pill-tag" id="photo-status-badge">Ready to Analyse</span>
+          </div>
+
+          <div class="photo-preview-frame" id="photo-preview-frame">
+            <img id="uploaded-photo-img" class="uploaded-img-preview" alt="Uploaded client garden preview" />
+            <svg id="sample-garden-svg" class="garden-svg" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Overgrown rear garden at 14 Oak Lane with AI visual detection markers">
+              <defs>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#bae6fd" />
+                  <stop offset="100%" stop-color="#e0f2fe" />
+                </linearGradient>
+                <linearGradient id="hedgeGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#14532d" />
+                  <stop offset="100%" stop-color="#052e16" />
+                </linearGradient>
+                <linearGradient id="lawnGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4d7c0f" />
+                  <stop offset="60%" stop-color="#3f6212" />
+                  <stop offset="100%" stop-color="#365314" />
+                </linearGradient>
+                <linearGradient id="patioGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a8a29e" />
+                  <stop offset="100%" stop-color="#78716c" />
+                </linearGradient>
+              </defs>
+
+              <rect width="420" height="82" fill="url(#skyGrad)" />
+              <ellipse cx="85" cy="26" rx="38" ry="11" fill="#ffffff" opacity="0.75" />
+              <ellipse cx="110" cy="24" rx="28" ry="9" fill="#ffffff" opacity="0.85" />
+              <ellipse cx="310" cy="22" rx="42" ry="10" fill="#ffffff" opacity="0.7" />
+              <rect x="0" y="58" width="420" height="32" fill="#9a3412" opacity="0.75" />
+
+              <path d="M 0,88 L 0,42 Q 18,22 38,38 Q 62,16 88,35 Q 115,18 142,36 Q 170,14 198,33 Q 228,19 256,37 Q 285,15 312,35 Q 340,22 368,38 Q 395,25 420,38 L 420,92 Z" fill="url(#hedgeGrad)" />
+              <path d="M 10,88 Q 35,45 65,58 Q 100,35 135,55 Q 175,38 215,56 Q 260,36 300,54 Q 345,40 390,56 L 420,88 Z" fill="#166534" opacity="0.7" />
+
+              <rect x="0" y="86" width="420" height="92" fill="url(#lawnGrad)" />
+              <g stroke="#84cc16" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
+                <path d="M 28,125 l -4,-14 M 32,125 l 2,-16 M 36,125 l 6,-13" />
+                <path d="M 78,142 l -5,-15 M 83,142 l 1,-17 M 88,142 l 5,-14" />
+                <path d="M 135,118 l -4,-14 M 140,118 l 2,-16 M 145,118 l 6,-13" />
+                <path d="M 178,150 l -5,-16 M 183,150 l 1,-18 M 188,150 l 6,-14" />
+                <path d="M 225,130 l -4,-15 M 230,130 l 2,-17 M 235,130 l 5,-14" />
+                <path d="M 268,156 l -5,-14 M 273,156 l 2,-16 M 278,156 l 5,-13" />
+                <path d="M 108,162 l -4,-15 M 113,162 l 2,-17 M 118,162 l 5,-13" />
+              </g>
+
+              <path d="M 295,88 L 420,88 L 420,178 L 265,178 Z" fill="#451a03" />
+              <g fill="#65a30d">
+                <circle cx="320" cy="115" r="11" />
+                <circle cx="348" cy="108" r="13" />
+                <circle cx="382" cy="122" r="12" />
+                <circle cx="310" cy="145" r="14" />
+                <circle cx="355" cy="148" r="15" />
+                <circle cx="392" cy="154" r="13" />
+              </g>
+              <g fill="#facc15">
+                <circle cx="318" cy="112" r="2.8" />
+                <circle cx="352" cy="144" r="3" />
+                <circle cx="385" cy="120" r="2.5" />
+                <circle cx="308" cy="142" r="2.8" />
+              </g>
+
+              <rect x="0" y="174" width="420" height="56" fill="url(#patioGrad)" />
+              <g stroke="#57534e" stroke-width="1.5">
+                <line x1="85" y1="174" x2="70" y2="230" />
+                <line x1="175" y1="174" x2="165" y2="230" />
+                <line x1="265" y1="174" x2="260" y2="230" />
+                <line x1="350" y1="174" x2="355" y2="230" />
+                <line x1="0" y1="202" x2="420" y2="202" />
+              </g>
+
+              <rect x="12" y="20" width="235" height="54" rx="4" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="4 2" />
+              <rect x="16" y="24" width="154" height="18" rx="3" fill="#052e16" opacity="0.88" />
+              <text x="22" y="36" fill="#86efac" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">② Privet hedge ~2.2m (1.5h)</text>
+
+              <rect x="16" y="94" width="235" height="72" rx="4" fill="none" stroke="#facc15" stroke-width="1.6" stroke-dasharray="4 2" />
+              <rect x="20" y="98" width="166" height="18" rx="3" fill="#0f172a" opacity="0.88" />
+              <text x="26" y="110" fill="#fde047" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">① Overgrown lawn ~15cm (2.0h)</text>
+
+              <rect x="278" y="92" width="132" height="76" rx="4" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 2" />
+              <rect x="282" y="96" width="124" height="18" rx="3" fill="#0f172a" opacity="0.88" />
+              <text x="287" y="108" fill="#7dd3fc" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">③ Border weeds (1.25h)</text>
+
+              <rect x="16" y="178" width="388" height="46" rx="4" fill="none" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4 2" />
+              <rect x="22" y="182" width="182" height="18" rx="3" fill="#0f172a" opacity="0.88" />
+              <text x="28" y="194" fill="#fdba74" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">④ Yorkstone moss &amp; litter (0.75h)</text>
+            </svg>
+
+            <div class="photo-meta-strip">
+              <span id="photo-filename-label"><code>No photo selected</code></span>
+              <span><code>Gemini Vision</code> · No-£ Schema</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="upload-controls">
+            <label for="photo-input" class="file-label">Upload garden photo (PNG/JPEG, max 10 MB)</label>
+            <input
+              type="file"
+              id="photo-input"
+              data-testid="file-input"
+              accept="image/*"
+              aria-label="Upload client garden photo"
+            />
+            <div class="upload-btn-row">
+              <button type="button" id="sample-btn" data-testid="sample-btn" class="secondary" aria-pressed="false">Use sample garden</button>
+              <button type="button" id="analyse-btn" data-testid="analyse-btn">Analyse</button>
+            </div>
+          </div>
+          <p id="error-msg" data-testid="error-msg" class="error-banner" role="alert"></p>
+        </div>
+      </section>
+
+      <!-- Right Column: Itemised Labour Quote & Hour Adjustments -->
+      <section class="panel-card" aria-label="Itemised labour quote">
+        <div>
+          <div class="panel-header">
+            <h2>📋 Itemised Labour Quote &amp; Gardener Hour Adjustments</h2>
+            <span class="pill-tag">Zero-Hallucination Integer Pence Pricing</span>
+          </div>
+
+          <form id="adjust-form" data-quote-id="{{ quote.quote_id if quote else 'demo-quote-1' }}">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Include</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Visual Evidence (Gemini Vision)</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">Rate (£/hr)</th>
+                    <th scope="col">Line Total (£)</th>
+                  </tr>
+                </thead>
+                <tbody id="quote-tbody"></tbody>
+              </table>
+            </div>
+
+            <div class="totals">
+              <div class="totals-metrics">
+                <span><strong>Bookable Hours:</strong> <span id="total-hours">0.00</span> hrs</span>
+                <span>|</span>
+                <span><strong>Rate:</strong> <span id="hourly-rate" data-testid="hourly-rate">£25.00</span>/hr</span>
+                <span>|</span>
+                <span><strong>Quote Total:</strong> <span id="total-gbp" data-testid="total" class="total-price-highlight">£0.00</span></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bottom Grid: Weather-Safe Week Calendar + Client Quote Message -->
+    <div class="bottom-workspace">
+      <section class="panel-card" aria-label="Booking and calendar">
+        <div>
+          <div class="calendar-toolbar">
+            <h2>🌦️ Week Calendar</h2>
+            <div class="actions-row">
+              <p id="booking-msg" class="status-msg" role="status"></p>
+              <button type="button" id="book-btn" data-testid="book-btn" disabled>Book next free slot</button>
+            </div>
+          </div>
+          <div id="week-calendar" data-testid="calendar" class="week-calendar"></div>
+        </div>
+      </section>
+
+      <section class="panel-card" aria-label="Client quote message">
+        <div class="panel-header">
+          <h2>✉️ Client Quote Message</h2>
+          <span class="pill-tag">Ready to Send</span>
+        </div>
+        <div class="quote-message-box">
+          <pre id="quote-message" data-testid="quote-msg"></pre>
+          <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="copy-btn" data-testid="copy-btn" class="secondary">Copy</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
