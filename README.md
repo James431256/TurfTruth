@@ -2,6 +2,10 @@
 
 **Turn client garden photos into itemised, zero-hallucination labour quotes and book the next weather-safe slot in one click.**
 
+> 🏆 **Winner: 1st place out of 100+ teams** at the Google Cloud mini-hackathon *"Beyond vibes: how to use AI to build production-ready software"* (18 November 2026).
+>
+> Teams had three hours to start a business and build its web app with Antigravity and the latest Gemini models on a Google Cloud desktop, scored live on a leaderboard by "Judge Gemini" against each team's own product brief and acceptance criteria.
+
 TurfTruth is a lightweight web application for independent gardeners and landscaping crews. Upload a client's garden photo (or try the built-in sample garden) and TurfTruth uses Google Gemini with a constrained Pydantic `response_schema` to identify visible maintenance tasks, estimate labour hours, and cite visual evidence from the photo—while computing every penny of pricing deterministically in Python and JavaScript. Gardeners can tick or untick tasks, fine-tune hours in `0.25h` steps with instant total updates, book the job into the earliest rain-free gap in their working week, and copy a ready-to-send client quote message.
 
 ![TurfTruth sample garden analysis](tests/screenshots/c1_sample_analysis.png)
